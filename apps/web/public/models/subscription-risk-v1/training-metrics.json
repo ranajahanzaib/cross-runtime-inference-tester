@@ -1,0 +1,58 @@
+{
+  "class_distribution": { "negative": 5351, "positive": 1649 },
+  "model_id": "subscription-risk",
+  "model_version": "1.0.0",
+  "native_vs_onnx": {
+    "agreement": true,
+    "max_absolute_difference": 1.1920928955078125e-7,
+    "max_relative_difference": 5.705157462345961e-5,
+    "mean_absolute_difference": 2.5817841690565857e-8,
+    "outputs": 2800,
+    "reference_class": null,
+    "rmse": 3.757085439432397e-8,
+    "status": "PASS",
+    "target_class": null,
+    "violations": 0
+  },
+  "schema_version": "1.0.0",
+  "seed": 2026,
+  "test": {
+    "accuracy": 0.8371428571428572,
+    "confusion_matrix": [
+      [1013, 57],
+      [171, 159]
+    ],
+    "f1": 0.5824175824175825,
+    "positive_rate": 0.2357142857142857,
+    "precision": 0.7361111111111112,
+    "recall": 0.4818181818181818,
+    "roc_auc": 0.8597337864627584,
+    "samples": 1400
+  },
+  "training": {
+    "accuracy": 0.8422448979591837,
+    "confusion_matrix": [
+      [3545, 201],
+      [572, 582]
+    ],
+    "f1": 0.6009292720702116,
+    "positive_rate": 0.23551020408163265,
+    "precision": 0.7432950191570882,
+    "recall": 0.5043327556325823,
+    "roc_auc": 0.8587815449130719,
+    "samples": 4900
+  },
+  "validation": {
+    "accuracy": 0.8457142857142858,
+    "confusion_matrix": [
+      [508, 27],
+      [81, 84]
+    ],
+    "f1": 0.6086956521739131,
+    "positive_rate": 0.2357142857142857,
+    "precision": 0.7567567567567568,
+    "recall": 0.509090909090909,
+    "roc_auc": 0.8655678278108185,
+    "samples": 700
+  }
+}
