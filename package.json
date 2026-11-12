@@ -1,0 +1,17 @@
+{
+  "name": "cross-runtime-inference-tester",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@12.3.4",
+  "scripts": {
+    "dev": "pnpm --dir apps/web dev",
+    "build": "pnpm --dir apps/web build",
+    "test": "pnpm --dir apps/web test && uv run pytest",
+    "test:python": "uv run pytest",
+    "test:e2e": "pnpm build && pnpm --dir apps/web exec playwright test",
+    "lint": "pnpm --dir apps/web lint && uv run ruff check python",
+    "typecheck": "pnpm --dir apps/web typecheck && uv run mypy",
+    "demo": "uv run --project . cross-runtime-inference-tester demo",
+    "verify": "uv run --project . cross-runtime-inference-tester verify"
+  }
+}
