@@ -815,7 +815,8 @@ def write_reports(report: dict[str, Any], output: Path) -> None:
     summary = report["summary"]
     model_hash = report["model"]["sha256"]
     (output / "report.md").write_text(
-        f"# Cross-Runtime Inference Tester report\n\nStatus: **{status}**\n\nModel SHA-256: `{model_hash}`\n\n"
+        f"# Cross-Runtime Inference Tester report\n\nStatus: **{status}**\n\n"
+        f"Model SHA-256: `{model_hash}`\n\n"
         f"Cases: {summary['cases']}\n\nFailures: {summary['failures']}\n\n"
         f"Maximum absolute difference: {summary['max_absolute_difference']:.8g}\n\n"
         "This report describes synthetic demonstration data, not validated business risk estimates."

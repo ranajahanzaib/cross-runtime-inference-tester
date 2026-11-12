@@ -126,7 +126,9 @@ def fixtures(manifest: Path = ARTIFACT / "manifest.json") -> None:
     """Show location and count of deterministic model fixtures."""
     path = manifest.parent / "golden-vectors.json"
     if not path.exists():
-        raise typer.BadParameter("fixtures missing; run `cross_runtime_inference_tester demo` first")
+        raise typer.BadParameter(
+            "fixtures missing; run `cross_runtime_inference_tester demo` first"
+        )
     data = json.loads(path.read_text())
     print(f"{len(data['fixtures'])} fixtures at {path}")
 
