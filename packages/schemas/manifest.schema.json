@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cross-runtime-inference-tester.dev/schemas/manifest-1.0.0.json",
+  "title": "Cross-Runtime Inference Tester model manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "model_id",
+    "model_version",
+    "source_model_version",
+    "model_type",
+    "task_type",
+    "model_filename",
+    "model_sha256",
+    "feature_schema_version",
+    "feature_schema_sha256",
+    "feature_order",
+    "input_name",
+    "input_dtype",
+    "input_shape",
+    "output_names",
+    "output_types",
+    "probability_output_name",
+    "class_output_name",
+    "class_labels",
+    "decision_threshold",
+    "opset_imports",
+    "training_seed",
+    "training_config",
+    "training_library_versions",
+    "export_library_versions",
+    "expected_runtime_compatibility",
+    "artifact_provenance"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "model_id": { "type": "string" },
+    "model_version": { "type": "string" },
+    "source_model_version": { "type": "string" },
+    "model_type": { "type": "string" },
+    "task_type": {
+      "enum": [
+        "binary_classification",
+        "multiclass_classification",
+        "regression"
+      ]
+    },
+    "model_filename": { "type": "string" },
+    "model_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "feature_schema_version": { "type": "string" },
+    "feature_schema_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "feature_order": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "input_name": { "type": "string" },
+    "input_dtype": { "const": "float32" },
+    "input_shape": {
+      "type": "array",
+      "items": { "type": ["integer", "null"] }
+    },
+    "output_names": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "output_types": { "type": "array", "items": { "type": "string" } },
+    "probability_output_name": { "type": "string" },
+    "class_output_name": { "type": "string" },
+    "class_labels": {
+      "type": "array",
+      "items": { "type": ["string", "integer"] }
+    },
+    "decision_threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+    "opset_imports": {
+      "type": "object",
+      "additionalProperties": { "type": "integer" }
+    },
+    "training_seed": { "type": "integer" },
+    "training_config": { "type": "object" },
+    "training_library_versions": { "type": "object" },
+    "export_library_versions": { "type": "object" },
+    "expected_runtime_compatibility": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifact_provenance": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

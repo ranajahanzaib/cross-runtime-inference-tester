@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cross-Runtime Inference Tester compatibility report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "model",
+    "runtimes",
+    "policy",
+    "cases",
+    "summary",
+    "benchmark",
+    "environment"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "model": { "type": "object", "required": ["id", "version", "sha256"] },
+    "runtimes": { "type": "array" },
+    "policy": { "type": "object" },
+    "cases": { "type": "array" },
+    "summary": {
+      "type": "object",
+      "required": ["cases", "failures", "passes", "status"]
+    },
+    "benchmark": { "type": ["object", "null"] },
+    "environment": { "type": "object" }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cross-runtime-inference-tester.dev/schemas/fixture-1.0.0.json",
+  "title": "Cross-Runtime Inference Tester inference fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_id",
+    "category",
+    "description",
+    "features",
+    "shape",
+    "dtype",
+    "expected_probabilities",
+    "expected_class",
+    "source_runtime",
+    "model_sha256",
+    "generation"
+  ],
+  "properties": {
+    "fixture_id": { "type": "string" },
+    "category": {
+      "enum": ["held-out-test", "typical", "boundary", "numerical", "batch"]
+    },
+    "description": { "type": "string" },
+    "features": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "number" } },
+        {
+          "type": "array",
+          "items": { "type": "array", "items": { "type": "number" } }
+        }
+      ]
+    },
+    "shape": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+    "dtype": { "const": "float32" },
+    "expected_probabilities": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "number" } },
+        {
+          "type": "array",
+          "items": { "type": "array", "items": { "type": "number" } }
+        }
+      ]
+    },
+    "expected_class": {
+      "oneOf": [
+        { "type": "integer" },
+        { "type": "array", "items": { "type": "integer" } }
+      ]
+    },
+    "source_runtime": { "type": "string" },
+    "model_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "generation": { "type": "object" }
+  }
+}

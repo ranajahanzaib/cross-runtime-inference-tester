@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cross-runtime-inference-tester.dev/schemas/prediction-result-1.0.0.json",
+  "title": "Cross-Runtime Inference Tester prediction result",
+  "type": "object",
+  "required": [
+    "runtime_id",
+    "probabilities",
+    "classes",
+    "latency_ms",
+    "model_sha256",
+    "input_shape",
+    "input_dtype"
+  ],
+  "properties": {
+    "runtime_id": { "type": "string" },
+    "probabilities": { "type": "array" },
+    "classes": { "type": "array" },
+    "latency_ms": { "type": "number", "minimum": 0 },
+    "initialization_ms": { "type": "number", "minimum": 0 },
+    "model_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "input_shape": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 1 }
+    },
+    "input_dtype": { "const": "float32" }
+  }
+}
