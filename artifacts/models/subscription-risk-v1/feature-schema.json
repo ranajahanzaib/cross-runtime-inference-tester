@@ -1,0 +1,85 @@
+{
+  "features": [
+    {
+      "default": 18,
+      "description": "Time since account started",
+      "label": "Tenure",
+      "max": 120,
+      "min": 0,
+      "name": "tenure_months",
+      "type": "number",
+      "unit": "months"
+    },
+    {
+      "default": 15,
+      "description": "Days with product activity in the past 30 days",
+      "label": "Active days",
+      "max": 30,
+      "min": 0,
+      "name": "active_days_30d",
+      "type": "number",
+      "unit": "days"
+    },
+    {
+      "default": 1,
+      "description": "Support requests in the past 90 days",
+      "label": "Support tickets",
+      "max": 40,
+      "min": 0,
+      "name": "support_tickets_90d",
+      "type": "number",
+      "unit": "tickets"
+    },
+    {
+      "default": 0,
+      "description": "Failed payment attempts in the past year",
+      "label": "Failed payments",
+      "max": 12,
+      "min": 0,
+      "name": "failed_payments_12m",
+      "type": "number",
+      "unit": "payments"
+    },
+    {
+      "default": 24,
+      "description": "Mean product session duration",
+      "label": "Average session",
+      "max": 300,
+      "min": 0,
+      "name": "avg_session_minutes",
+      "type": "number",
+      "unit": "minutes"
+    },
+    {
+      "default": 49,
+      "description": "Fictional monthly subscription price",
+      "label": "Monthly plan",
+      "max": 500,
+      "min": 0,
+      "name": "monthly_plan_usd",
+      "type": "number",
+      "unit": "USD"
+    },
+    {
+      "default": 45,
+      "description": "Share of available features used",
+      "label": "Feature adoption",
+      "max": 100,
+      "min": 0,
+      "name": "feature_adoption_pct",
+      "type": "number",
+      "unit": "percent"
+    },
+    {
+      "default": 4,
+      "description": "Days since the account was last active",
+      "label": "Last login",
+      "max": 365,
+      "min": 0,
+      "name": "days_since_last_login",
+      "type": "number",
+      "unit": "days"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

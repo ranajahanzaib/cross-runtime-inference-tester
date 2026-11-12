@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "subscription-risk",
+  "model_version": "1.0.0",
+  "source_model_version": "sklearn-pipeline-v1",
+  "model_type": "StandardScaler+LogisticRegression",
+  "task_type": "binary_classification",
+  "model_filename": "model.onnx",
+  "model_sha256": "c92196737031d658d8aa9846ff8a5fec11332ab17da11b7b21fd05588b4169bb",
+  "feature_schema_version": "1.0.0",
+  "feature_schema_sha256": "a728936b7b01318a540d46a1b6b7b3c3bbfc11f1776b862e22f2a935e081e611",
+  "feature_order": [
+    "tenure_months",
+    "active_days_30d",
+    "support_tickets_90d",
+    "failed_payments_12m",
+    "avg_session_minutes",
+    "monthly_plan_usd",
+    "feature_adoption_pct",
+    "days_since_last_login"
+  ],
+  "input_name": "features",
+  "input_dtype": "float32",
+  "input_shape": [null, 8],
+  "output_names": ["label", "probabilities"],
+  "output_types": ["int64", "float32"],
+  "probability_output_name": "probabilities",
+  "class_output_name": "label",
+  "class_labels": [0, 1],
+  "decision_threshold": 0.5,
+  "opset_imports": {
+    "ai.onnx.ml": 1,
+    "ai.onnx": 17
+  },
+  "training_seed": 2026,
+  "training_config": {
+    "samples": 7000,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.1,
+    "test_fraction": 0.2,
+    "class_balance_target": 0.24
+  },
+  "training_library_versions": {
+    "python": "3.12.11",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.1"
+  },
+  "export_library_versions": {
+    "onnx": "1.23.2",
+    "skl2onnx": "1.20.0",
+    "onnxruntime": "1.31.1"
+  },
+  "expected_runtime_compatibility": [
+    "python-onnxruntime-cpu",
+    "browser-onnxruntime-wasm"
+  ],
+  "artifact_provenance": {
+    "generator": "cross_runtime_inference_tester synthetic renewal risk data",
+    "source": "synthetic; not validated business estimates"
+  }
+}
