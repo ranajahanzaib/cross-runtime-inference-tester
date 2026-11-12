@@ -21,7 +21,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.3,<9", "ruff>=0.8,<1", "mypy>=1.13,<2"]
+dev = ["pytest>=8.3,<10", "ruff>=0.8,<1", "mypy>=1.13,<2"]
 
 [project.scripts]
 cross-runtime-inference-tester = "cross_runtime_inference_tester.cli:app"
