@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use Cross-Runtime Inference Tester in research or teaching, please cite this software."
+title: "Cross-Runtime Inference Tester"
+version: 0.1.0
+authors:
+  - family-names: Rana
+    given-names: Jahanzaib
+    orcid: "https://orcid.org/0009-0006-7085-0440"
+repository-code: "https://github.com/ranajahanzaib/cross-runtime-inference-tester"
+license: MIT
+abstract: "Cross-Runtime Inference Tester measures whether a numerical ONNX model produces equivalent outputs in Python ONNX Runtime and browser ONNX Runtime Web. It reports numerical drift, class agreement, artifact identity, and measured runtime latency."
+keywords:
+  - machine-learning
+  - onnx
+  - onnxruntime
+  - webassembly
+  - model-verification
